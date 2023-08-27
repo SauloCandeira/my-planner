@@ -1,0 +1,460 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+  <!-- SCRIPTS-->
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="./static/js/timeline.js"></script>
+  <script type="text/javascript" src="./static/js/jquery.js"></script>
+  
+  <!-- Owl Carousel Assets -->
+  <link rel="stylesheet" type="text/css" href="./static/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="./static/owl-carousel/owl.theme.css">
+
+  <!-- STYLE-->
+  <link rel="stylesheet" type="text/css" href="./static/styles/timeline.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/metismenujs.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/owl-carousel/mm-folder.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/timeline.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleOnePost">
+  <link rel="stylesheet" type="text/css" href="./static/styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/styles-pwa.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/FooterStyle.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleCard.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleContador">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleHeader.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleKanbam.css">
+  <link rel="stylesheet" type="text/css" href="./static/styles/StyleTeam.css">
+
+
+</head>
+<body onload="drawVisualization();">
+
+    <!-- MAIN CONTAINER -->
+    <div class="menu-lateral">
+        <!-- LATERAL-->
+        <div class="lateral">
+
+            <!-- LOGO-->
+            <div class="perfil">
+                <a href="#">
+                    <img src="static/images/SauloCandeira.jpg" alt="foto-perfil" class="sombra">
+                </a>
+            </div>
+
+            <!-- MINI-MENU HAMBURGUER-->
+            <div class="mini-menu-button">
+                <span></span>
+            </div>
+
+            <!--Itens navegação-->
+            <ul class="itens-menu">  
+                <!-- <li><a href="#home" class="active"><i class="fa fa-user"></i> Tasks </a></li>
+                <li><a href="#servicos"><i class="fa fa-list"></i> Timeline </a></li>
+                <li><a href="#artigos"><i class="fa fa-book"></i> Team </a></li>
+                <li><a href="#eventos"><i class="fa fa-star"></i> Daily Notes </a></li>
+                <li><a href="#contato"><i class="fa fa-comments"></i> Analitycs </a></li>
+                <li><a href="#testes"><i class="fa fa-comments"></i> BPMN </a></li>
+                <li><a href="#laboratory"><i class="fa fa-comments"></i> Laboratory </a></li> -->
+                <li><a href="#RoadMap" class="active"><i class="fa fa-comments"></i> RoadMap </a></li>
+                <li><a href="#contato"><i class="fa fa-comments"></i> Analitycs </a></li>
+                <li>
+                  <div class="btn">
+                    <a href="https://saulocandeira.github.io/my-projects/"><button>Voltar</button></a>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    
+
+              <section class="contact section" id="contato">
+                <div class="container">
+                  
+                  <div class="StyleOnePost"> 
+              
+                  <!--  <div id="owl-demo" class="owl-carousel"> -->
+                
+                
+                                      
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Bar Chart (%)</h5>
+                          <p class="card-text">
+                            <canvas id="myChart" width="500px" height="250px"></canvas>
+                          </p>
+                        </div>
+                      </div>
+                        
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Line Chart</h5>
+                          <p class="card-text">
+                            <canvas id="myLineChart" width="500px" height="250px"></canvas>
+                          </p>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                                      
+                
+                  </div>        
+
+                  <div class="StyleOnePost"> 
+              
+                    <div id="owl-demo" class="owl-carousel"> 
+                
+                
+                                      
+                      <!-- Chart -->
+                      <div class="container-fluid padding">
+                          <div class="row padding">
+                              <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 my-4">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <h5 class="card-title">Bar Chart</h5>
+                                          <p class="card-text">
+                                              <canvas id="myChart" width="200px" height="200px" aria-label="Hello ARIA World" role="img"></canvas>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 my-4">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <h5 class="card-title">Pie Chart</h5>
+                                          <p class="card-text">
+                                              <canvas id="myPieChart" width="200px" height="200px"></canvas>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 my-4">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <h5 class="card-title">Line Chart</h5>
+                                          <p class="card-text">
+                                              <canvas id="myLineChart" width="200px" height="200px"></canvas>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 my-4">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <h5 class="card-title">Radar Chart</h5>
+                                          <p class="card-text">
+                                              <canvas id="myRadarChart" width="200px" height="200px"></canvas>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Js for Chart goes here -->
+                      <script>
+                          var ctx = document.getElementById("myChart").getContext("2d");
+
+                          var data = {
+                              labels: ['Ministerio da Economia', 'Banco do Brasil', 'Caixa Economica', 'Funpresp', 'CGU', 'MINISTERIO DAS COMUNICACOES', 'TJDFT', 'POLICIA PENAL', 'BRB', 'Receita Federal', 'BB', 'BBTS'],
+                              datasets: [
+                                  {
+                                      label: "Conhecimentos Basicos",
+                                      backgroundColor: "blue",
+                                      data: [50,50,60,60,33,70,0,0,43,32.85,64,37.5]
+                                  },
+                                  {
+                                      label: "Conhecimentos Especificos",
+                                      backgroundColor: "red",
+                                      data: [26,34,23,29,21,29,0,0,46,42.85, 62, 40]
+                                  },
+                                  {
+                                      label: "Nota final",
+                                      backgroundColor: "green",
+                                      data: [36, 39, 41, 38, 22, 36, 0,0,45,38.85,63,38.57],
+                                  }, 
+                                  {
+                                      label: "Nota de corte",
+                                      backgroundColor: "yellow",
+                                      data: [0, 0, 0, 0, 0, 0, 0,0,50,0, 70],
+                                  }, 
+                              ]
+                          };
+
+                          var myBarChart = new Chart(ctx, {
+                              type: 'bar',
+                              data: data,
+                              options: {
+                                  barValueSpacing: 20,
+                                  scales: {
+                                      yAxes: [{
+                                          ticks: {
+                                              min: 0,
+                                              beginAtZero: true,
+                                          }
+                                      }]
+                                  }
+                              }
+                          });
+
+                          var piectx = document.getElementById('myPieChart').getContext('2d');
+                          var myPieChart = new Chart(piectx, {
+                                  type: 'pie',
+                                  data: {
+                                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                      datasets: [{
+                                          label: '# of Votes',
+                                          data: [12, 19, 3, 5, 2, 3],
+                                          backgroundColor: [
+                                              'rgba(255, 99, 132, 0.2)',
+                                              'rgba(54, 162, 235, 0.2)',
+                                              'rgba(255, 206, 86, 0.2)',
+                                              'rgba(75, 192, 192, 0.2)',
+                                              'rgba(153, 102, 255, 0.2)',
+                                              'rgba(255, 159, 64, 0.2)'
+                                          ],
+                                          borderColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)'
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+
+                          var linectx = document.getElementById('myLineChart').getContext('2d');
+                              var myPieChart = new Chart(linectx, {
+                                  type: 'line',
+                                  data: {
+                                      labels: ['Ministerio da Economia', 'Banco do Brasil', 'Caixa Economica', 'Funpresp', 'CGU', 'MINISTERIO DAS COMUNICACOES', 'TJDFT', 'POLICIA PENAL', 'BRB', 'RECEITA FEDERAL', 'BB', 'BBTS'],
+                                      datasets: [{
+                                          label: '# of Votes',
+                                          data: [36, 39, 41, 38, 22, 36, 0,0,45, 38.85, 63,38.57],
+                                          backgroundColor: [
+                                              'rgba(255, 99, 132, 0.2)',
+                                              'rgba(54, 162, 235, 0.2)',
+                                              'rgba(255, 206, 86, 0.2)',
+                                              'rgba(75, 192, 192, 0.2)',
+                                              'rgba(153, 102, 255, 0.2)',
+                                              'rgba(255, 159, 64, 0.2)'
+                                          ],
+                                          borderColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)'
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+
+                          var radarctx = document.getElementById('myRadarChart').getContext('2d');
+                              var myPieChart = new Chart(radarctx, {
+                                  type: 'radar',
+                                  data: {
+                                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                      datasets: [{
+                                          label: '# of Votes',
+                                          data: [12, 19, 3, 5, 2, 3],
+                                          backgroundColor: [
+                                              'rgba(255, 99, 132, 0.2)',
+                                              'rgba(54, 162, 235, 0.2)',
+                                              'rgba(255, 206, 86, 0.2)',
+                                              'rgba(75, 192, 192, 0.2)',
+                                              'rgba(153, 102, 255, 0.2)',
+                                              'rgba(255, 159, 64, 0.2)'
+                                          ],
+                                          borderColor: [
+                                              'rgba(255, 99, 132, 1)',
+                                              'rgba(54, 162, 235, 1)',
+                                              'rgba(255, 206, 86, 1)',
+                                              'rgba(75, 192, 192, 1)',
+                                              'rgba(153, 102, 255, 1)',
+                                              'rgba(255, 159, 64, 1)'
+                                          ],
+                                          borderWidth: 1
+                                      }]
+                                  },
+                                  options: {
+                                      scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero: true
+                                              }
+                                          }]
+                                      }
+                                  }
+                              });
+                      </script>
+
+
+                      
+                  <!--  </div>  -->
+
+                                      
+                
+                  </div>                  
+
+                  
+
+                </div>
+            </section>
+            <!--FIM ANALYTICS-->
+
+
+
+
+
+            <!-- INICIO TIMLINE-->
+            <section class="home section active" id="home">
+            <!-- <section class="service section" id="RoadMap"> -->
+
+              <!-- <div class="main-content"> -->
+                  <div class="container">        
+
+                    <!-- RECEITA FEDERAL -->
+                    <section class="StyleContador">
+                      <div class="home-img"> 
+                        <div class="video">          
+                            <iframe src="templates/receita-federal/receita-federal.html" height="300" width="1000"></iframe> 
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- BANCO DO BRASIL -->
+                    <section class="StyleContador">
+                      <div class="home-img"> 
+                        <div class="video">          
+                            <iframe src="templates/banco-do-brasil/banco-do-brasil.html" height="300" width="1000"></iframe> 
+                        </div>
+                      </div>
+                    </section>
+              
+                    <!-- BBTS -->
+                    <section class="StyleContador">
+                      <div class="home-img"> 
+                        <div class="video">          
+                            <iframe src="templates/bbts/bbts.html" height="300" width="1000"></iframe> 
+                        </div>
+                      </div>
+                    </section>    
+
+                    <!-- CAMARA DOS DEPUTADOS -->
+                    <section class="StyleContador">
+                        <div class="home-img"> 
+                            <div class="video">          
+                                <iframe src="templates/camara-dos-deputados/camara-dos-deputados.html" height="300" width="1000"></iframe> 
+                            </div>
+                        </div>
+                    </section>
+                    <!-- CAMARA DOS DEPUTADOS -->    
+
+                    
+
+                </div>
+              <!-- </div> -->
+
+            </section>
+
+
+        </div>
+    </div>
+
+    
+    <script>
+      $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+  
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000, //2000ms = 2s;
+        autoplayHoverPause: true,
+  
+        navigation : true,
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem : true
+  
+        // "singleItem:true" is a shortcut for:
+        // items : 1, 
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+  
+        });
+      });
+    </script>
+                  
+    <!-- Laboratory-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="./static/js/metismenujs.min.js"></script>
+    <script>
+        new MetisMenu(".metisFolder", {
+            toggle: false
+        })
+    </script>
+
+    <!-- Java Script Files goes here -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>  
+
+    <!--Add js-->
+    <script src="./static/js/scripts.js"></script>
+    <script src="./static/js/owl.carousel.js"></script>
+    <script src="./static/js/owl-carousel/owl.carousel.js"></script>
+
+    <!--  widget WhatsApp -->
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+55(61)981374279", // WhatsApp number
+                call_to_action: "Fale Comigo Agora!", // Call to action
+                position: "top", // Position may be 'right' or 'left'
+            };
+            var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- widget WhatsAppt -->
+
+</body>
+</html>
